@@ -265,7 +265,7 @@ function renderOverviewSection(container) {
     <div class="hero-card">
       <div class="hero-text">
         <span class="section-badge badge-navy">✨ Sổ tay Đồng hành Ôn thi</span>
-        <h2>Chào bạn! Chúc bạn có một kỳ thi thật rực rỡ 🍀</h2>
+        <h2>Hello Chôm! Chúc Chôm có một kỳ thi thật rực rỡ 🍀</h2>
         <p>Hệ thống ôn tập thi đóng toàn diện 4 môn Khoa Quan hệ Quốc tế – USSH VNUHCM. Dành tặng bạn để tra cứu nhanh, nắm chắc khung lý thuyết và tự tin đạt điểm cao nhất.</p>
       </div>
       <div class="hero-stats">
