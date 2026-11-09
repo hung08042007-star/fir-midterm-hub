@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sổ tay Ôn thi Giữa kỳ FIR USSH | Khoa Quan hệ Quốc tế</title>
+  <meta name="description" content="Sổ tay học tập và hệ thống ôn thi đóng giữa kỳ toàn diện 4 môn Khoa Quan hệ Quốc tế - ĐHKHXH&NV ĐHQG TP.HCM.">
+  
+  <!-- Typography (Inter & JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">🌐</div>
+          <div class="brand-text">
+            <h1>FIR USSH Study Hub</h1>
+            <span>Khoa Quan hệ Quốc tế</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Group: Lộ trình -->
+        <div>
+          <div class="nav-group-title">Lộ trình & Tổng quan</div>
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <button data-section="overview">
+                <span class="icon">🧭</span>
+                <span>Tổng quan & Ma trận</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: 4 Môn học -->
+        <div>
+          <div class="nav-group-title">4 Môn Thi Giữa Kỳ</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <button data-section="nhap_mon">
+                <span class="icon">📘</span>
+                <span>Nhập môn QHQT</span>
+                <span class="nav-badge">QTE133</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="cong_phap">
+                <span class="icon">⚖️</span>
+                <span>Công pháp Quốc tế</span>
+                <span class="nav-badge">QTE018</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="ngoai_giao_vn">
+                <span class="icon">📜</span>
+                <span>Lịch sử Ngoại giao VN</span>
+                <span class="nav-badge">QTE040</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="reading_ir">
+                <span class="icon">📖</span>
+                <span>Reading in IR</span>
+                <span class="nav-badge">QTE212</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Công cụ luyện thi -->
+        <div>
+          <div class="nav-group-title">Công Cụ Thi Đóng</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <button data-section="flashcards">
+                <span class="icon">⚡</span>
+                <span>Flashcards Thuật ngữ</span>
+                <span class="nav-badge">40</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="quizzes">
+                <span class="icon">🎯</span>
+                <span>Trắc nghiệm & Đúng/Sai</span>
+                <span class="nav-badge">Luyện đề</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="essays">
+                <span class="icon">📝</span>
+                <span>Dàn ý Tự luận Điểm 10</span>
+                <span class="nav-badge">8 Đề</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="mock_exams">
+                <span class="icon">⏱️</span>
+                <span>Phòng Thi thử Giữa kỳ</span>
+                <span class="nav-badge">Timer 60'</span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button data-section="cheat_sheet">
+                <span class="icon">📋</span>
+                <span>Cheat Sheet 15 Phút</span>
+                <span class="nav-badge">Cứu cánh</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="study-progress-card">
+          <div class="progress-header">
+            <span>Tiến độ ôn tập</span>
+            <span id="globalProgressText">0/20 chuyên đề (0%)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="globalProgressFill"></div>
+          </div>
+        </div>
+        <div style="font-size:0.75rem; color:var(--text-muted); text-align:center;">
+          Made with care for FIR USSH 🍀
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="main-wrapper">
+      <!-- TOP NAVBAR -->
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="btn-menu-toggle" id="btnMenu" aria-label="Toggle menu">☰</button>
+          <div class="search-trigger" id="searchTrigger">
+            <span>🔍</span>
+            <span>Tra cứu nhanh thuật ngữ, sự kiện...</span>
+            <kbd>Ctrl K</kbd>
+          </div>
+        </div>
+
+        <div class="navbar-right">
+          <button class="btn-action" onclick="window.print()" title="In ra giấy hoặc lưu PDF">
+            <span>🖨️</span>
+            <span>In PDF</span>
+          </button>
+          <button class="btn-theme-toggle" id="btnTheme" title="Đổi giao diện Sáng / Tối">
+            🌙
+          </button>
+        </div>
+      </header>
+
+      <!-- DYNAMIC CONTENT BODY -->
+      <main class="content-body" id="mainContent">
+        <!-- Populated dynamically by app.js -->
+      </main>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <span>🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Tìm theo thuật ngữ, điều khoản, niên đại..." autocomplete="off">
+        <kbd style="font-size:0.75rem; color:var(--text-muted);">ESC</kbd>
+      </div>
+      <div class="search-results" id="searchResults">
+        <!-- Results injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
